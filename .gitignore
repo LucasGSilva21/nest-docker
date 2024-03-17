@@ -90,3 +90,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore local running
+.terraform.lock.hcl
+test-key-pair

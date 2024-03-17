@@ -45,10 +45,11 @@ resource "local_file" "tf-key" {
 
 # Create EC2 instance where docker container will run
 resource "aws_instance" "my_instance" {
-  ami           = "ami-0d7a109bf30624c99"
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.public.id
-  key_name      = aws_key_pair.kp.key_name
+  ami                         = "ami-0d7a109bf30624c99"
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.public.id
+  key_name                    = aws_key_pair.kp.key_name
+  associate_public_ip_address = true
 
   tags = {
     Name = "MyEC2Instance"
